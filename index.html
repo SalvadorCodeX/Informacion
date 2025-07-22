@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salvadxr.dev | Desarrollador Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      transition: background 0.5s, color 0.5s;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.85)), url('https://images.unsplash.com/photo-1518770660439-4636190af475') no-repeat center center/cover;
+      color: #eee;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .light-mode {
+      background: #f9f9f9 !important;
+      color: #111 !important;
+    }
+
+    .light-mode .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      color: #111;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      max-width: 650px;
+      width: 100%;
+      text-align: center;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      margin-bottom: 15px;
+    }
+
+    .typing {
+      font-weight: bold;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      animation: colorChange 4s infinite;
+      height: 30px;
+    }
+
+    @keyframes colorChange {
+      0% { color: #ff416c; }
+      25% { color: #ff4b2b; }
+      50% { color: #1e90ff; }
+      75% { color: #32cd32; }
+      100% { color: #ff416c; }
+    }
+
+    .glass-card p {
+      font-size: 1rem;
+      text-align: justify;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .social-icons a {
+      font-size: 1.8rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .email { color: #d44638; }
+    .instagram { color: #e1306c; }
+    .whatsapp { color: #25D366; }
+    .tiktok { color: #000; }
+
+    .light-mode .tiktok { color: #111; }
+
+    .cta {
+      display: inline-block;
+      background-color: #fff;
+      color: #000;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .cta:hover {
+      background-color: #ddd;
+    }
+
+    .rain {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .raindrop {
+      position: absolute;
+      width: 2px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.3);
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px); }
+      100% { transform: translateY(100vh); }
+    }
+
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 100;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .light-mode .theme-toggle {
+      color: #111;
+    }
+
+    @media (max-width: 640px) {
+      .glass-card {
+        padding: 25px;
+      }
+      .typing {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="rain" id="rain-container"></div>
+
+  <div class="theme-toggle" id="themeToggle" title="Modo Claro/Oscuro">
+    <i class="fas fa-adjust"></i>
+  </div>
+
+  <div class="glass-card">
+    <img src="Lobo.jpg" alt="Foto de Salvador" class="profile-pic">
+    <div class="typing" id="typing"></div>
+    <p>
+      ¡Hola! Soy <strong>Salvador</strong>, un joven desarrollador web de <strong>16 años</strong>, actualmente en formación. Aunque soy principiante, estoy mejorando cada día mis habilidades en HTML, CSS y JavaScript. Me apasiona la tecnología y disfruto transformar ideas en sitios web modernos y funcionales.
+      <br><br>
+      Si necesitas una página web para tu negocio, emprendimiento, proyecto personal o empleo, te ofrezco un diseño visual, responsivo y funcional a un <strong>precio accesible</strong>. Además, aplico <strong>descuentos especiales para nuevos clientes</strong>. ¡Es el momento ideal para digitalizar tus ideas!
+    </p>
+    <div class="social-icons">
+      <a href="mailto:salvador.dev@yahoo.com" class="email" title="Correo Electrónico"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.instagram.com/salvadxr.dev" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/524591095871" class="whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.tiktok.com/@salvadxr.dev" class="tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <a href="mailto:salvador.dev@yahoo.com" class="cta">Contáctame para tu página web</a>
+  </div>
+
+  <script>
+    // Efecto lluvia
+    const rainContainer = document.getElementById('rain-container');
+    function createRainDrop() {
+      const drop = document.createElement('div');
+      drop.classList.add('raindrop');
+      drop.style.left = `${Math.random() * 100}%`;
+      drop.style.animationDuration = `${Math.random() * 1 + 1}s`;
+      rainContainer.appendChild(drop);
+      setTimeout(() => drop.remove(), 2000);
+    }
+    setInterval(createRainDrop, 50);
+
+    // Texto animado
+    const text = "@salvadxr.dev";
+    let i = 0;
+    let forward = true;
+    const typingEl = document.getElementById("typing");
+    function typeEffect() {
+      if (forward) {
+        if (i < text.length) {
+          typingEl.textContent += text.charAt(i);
+          i++;
+        } else {
+          forward = false;
+          setTimeout(typeEffect, 1000);
+          return;
+        }
+      } else {
+        if (i > 0) {
+          typingEl.textContent = text.substring(0, i - 1);
+          i--;
+        } else {
+          forward = true;
+        }
+      }
+      setTimeout(typeEffect, 120);
+    }
+    typeEffect();
+
+    // Modo claro/oscuro
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+</body>
+</html>
