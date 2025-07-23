@@ -10,18 +10,22 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
       transition: background 0.5s, color 0.5s;
-      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       background: linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.85)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
       color: #eee;
-      overflow: hidden;
+      overflow-y: auto;
       padding: 20px;
       animation: fadeInBackground 2s ease-in-out;
+      flex-direction: column;
     }
 
     @keyframes fadeInBackground {
@@ -197,16 +201,17 @@
   </div>
 
   <div class="glass-card">
-    <img src="https://images.pexels.com/photos/4218883/pexels-photo-4218883.jpeg" alt="Foto de Salvador" class="profile-pic">
+    <img src="https://i.pinimg.com/736x/a6/1e/0a/a61e0a979caaf04ad2889db03d211150.jpg" alt="Foto de Salvador" class="profile-pic">
     <div class="typing" id="typing"></div>
     <p>
-      Soy <strong>Salvador</strong>, un joven desarrollador web de <strong>16 años</strong>. Aunque estoy comenzando, mejoro cada día y ya creo sitios modernos, visuales y funcionales. <br><br>
-      Si necesitas una página para tu negocio, proyecto o marca personal, <strong>contáctame</strong>. Estoy ofreciendo <strong>descuentos especiales para nuevos clientes</strong>. ¡Hablemos!
+      Soy <strong>Salvador</strong>, un desarrollador web de <strong>16 años</strong> que crea sitios modernos, rápidos y adaptados a todo tipo de pantalla. Aunque estoy iniciando, trabajo con dedicación y me esfuerzo para que cada proyecto luzca profesional y funcione bien.<br><br>
+      Si necesitas una página para tu negocio, emprendimiento o marca personal, puedo ayudarte. Estoy ofreciendo <strong>descuentos especiales para nuevos clientes</strong> y te explico todo paso a paso, sin complicaciones.<br><br>
+      <strong>Contáctame y hagamos realidad tu idea</strong>.
     </p>
     <div class="social-icons">
       <a href="mailto:salvador.dev@yahoo.com" class="email" title="Correo Electrónico"><i class="fas fa-envelope"></i></a>
       <a href="https://www.instagram.com/salvadxr.dev" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/524591095871" class="whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://wa.me/524591095871?text=Hola%2C%20soy%3A%0AMe%20interesa%20una%20p%C3%A1gina%20web%2C%20%C2%BFme%20puedes%20dar%20informaci%C3%B3n%3F" class="whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.tiktok.com/@salvadxr.dev" class="tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
     </div>
     <a href="mailto:salvador.dev@yahoo.com" class="cta">Contáctame</a>
